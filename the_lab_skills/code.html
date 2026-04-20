@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Lab | Rattan AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(97, 118, 157, 0.1) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#61769d",
+                        "secondary-container": "#762f3b",
+                        "on-tertiary-fixed": "#001249",
+                        "tertiary-fixed": "#98adff",
+                        "on-secondary": "#621f2c",
+                        "inverse-on-surface": "#40557b",
+                        "surface": "#000e26",
+                        "error-dim": "#d7383b",
+                        "primary-container": "#28aed5",
+                        "secondary-fixed-dim": "#ffaeb7",
+                        "outline-variant": "#33486d",
+                        "surface-container-high": "#001f46",
+                        "on-primary": "#004659",
+                        "surface-dim": "#000e26",
+                        "tertiary-fixed-dim": "#859eff",
+                        "on-surface": "#dbe5ff",
+                        "surface-container-highest": "#002551",
+                        "primary": "#5ed4fd",
+                        "error": "#ff716c",
+                        "on-tertiary-container": "#001655",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-container": "#002732",
+                        "on-primary-fixed": "#00313e",
+                        "primary-fixed": "#5ed4fd",
+                        "background": "#000e26",
+                        "secondary": "#fe9da9",
+                        "error-container": "#9f0519",
+                        "primary-fixed-dim": "#4dc6ee",
+                        "on-surface-variant": "#96acd6",
+                        "secondary-fixed": "#ffc2c8",
+                        "on-tertiary": "#002172",
+                        "primary-dim": "#4dc6ee",
+                        "surface-container": "#00193b",
+                        "secondary-dim": "#ef909c",
+                        "inverse-primary": "#006882",
+                        "surface-tint": "#5ed4fd",
+                        "surface-bright": "#002b5d",
+                        "surface-variant": "#002551",
+                        "on-tertiary-fixed-variant": "#022e94",
+                        "on-error": "#490006",
+                        "on-secondary-container": "#ffc0c6",
+                        "surface-container-low": "#00132f",
+                        "on-background": "#dbe5ff",
+                        "inverse-surface": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#833945",
+                        "tertiary": "#8da4ff",
+                        "on-error-container": "#ffa8a3",
+                        "tertiary-dim": "#7d98ff",
+                        "on-primary-fixed-variant": "#005065",
+                        "tertiary-container": "#7a95fd",
+                        "on-secondary-fixed": "#5f1d29"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-[#000e26]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#19A7CE] cursor-pointer">menu</span>
+<h1 class="text-2xl font-bold tracking-tighter text-[#19A7CE] drop-shadow-[0_0_8px_rgba(25,167,206,0.5)] font-headline uppercase">Rattan | AI</h1>
+</div>
+<nav class="hidden md:flex gap-8 font-headline uppercase tracking-widest text-xs">
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300" href="#">Home</a>
+<a class="text-[#fe9da9] font-bold" href="#">Skills</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300" href="#">Projects</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300" href="#">Contact</a>
+</nav>
+<span class="material-symbols-outlined text-[#19A7CE] active:scale-95 transition-all">rocket_launch</span>
+</div>
+</header>
+<!-- NavigationDrawer from JSON -->
+<aside class="fixed right-0 top-0 h-screen w-80 z-[60] p-8 bg-[#000e26] border-l border-white/5 shadow-[20px_0_50px_rgba(0,0,0,0.5)] hidden md:block opacity-0 pointer-events-none transition-all lg:opacity-100 lg:pointer-events-auto">
+<div class="mb-12">
+<h2 class="text-[#fe9da9] font-black italic font-headline text-2xl">EXPERIMENT 626</h2>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200 ease-in-out cursor-pointer font-headline text-lg">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</div>
+<div class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200 ease-in-out cursor-pointer font-headline text-lg">
+<span class="material-symbols-outlined">person</span>
+<span>About</span>
+</div>
+<div class="flex items-center gap-4 p-4 bg-[#19A7CE]/10 text-[#19A7CE] border-r-4 border-[#19A7CE] transition-transform duration-200 ease-in-out cursor-pointer font-headline text-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span>Skills</span>
+</div>
+<div class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200 ease-in-out cursor-pointer font-headline text-lg">
+<span class="material-symbols-outlined">terminal</span>
+<span>Projects</span>
+</div>
+<div class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200 ease-in-out cursor-pointer font-headline text-lg">
+<span class="material-symbols-outlined">map</span>
+<span>Roadmap</span>
+</div>
+<div class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200 ease-in-out cursor-pointer font-headline text-lg">
+<span class="material-symbols-outlined">send</span>
+<span>Contact</span>
+</div>
+</div>
+<div class="absolute bottom-8 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+</aside>
+<main class="min-h-screen pt-24 pb-12 px-6 lg:pr-80 bg-grid-pattern overflow-x-hidden">
+<div class="max-w-6xl mx-auto">
+<!-- Hero / Title Section -->
+<section class="relative mb-20 mt-12">
+<h1 class="font-headline text-[clamp(4rem,15vw,10rem)] font-bold tracking-tighter leading-none opacity-10 absolute -top-16 -left-4 select-none">
+                    THE LAB
+                </h1>
+<div class="relative z-10 glass-card bg-surface-variant/40 p-8 md:p-12 border border-outline-variant/15 max-w-2xl mt-8">
+<span class="text-primary font-headline tracking-[0.3em] text-xs uppercase mb-4 block">Experimental Environment</span>
+<h2 class="text-4xl md:text-6xl font-headline font-bold mb-6 leading-tight">Mastering the <span class="text-secondary italic">Neural</span> Architecture.</h2>
+<p class="text-on-surface-variant text-lg max-w-md">Synthesizing core logic with advanced visualization. A collection of frameworks and languages forged in the digital void.</p>
+</div>
+</section>
+<!-- Skills Grid -->
+<section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-24">
+<!-- Skill: Python -->
+<div class="group flex flex-col items-center gap-6">
+<div class="w-32 h-32 rounded-full glass-card bg-surface-variant/40 border border-primary/20 flex items-center justify-center relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(94,212,253,0.3)] group-hover:border-primary">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<div class="absolute inset-0 rounded-full bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="text-center">
+<h3 class="font-headline text-xl font-bold text-on-surface">Python</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Logic / OOPS</p>
+</div>
+</div>
+<!-- Skill: C -->
+<div class="group flex flex-col items-center gap-6">
+<div class="w-32 h-32 rounded-full glass-card bg-surface-variant/40 border border-secondary/20 flex items-center justify-center relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(254,157,169,0.3)] group-hover:border-secondary">
+<span class="material-symbols-outlined text-4xl text-secondary">memory</span>
+</div>
+<div class="text-center">
+<h3 class="font-headline text-xl font-bold text-on-surface">C Language</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Data Structures</p>
+</div>
+</div>
+<!-- Skill: Dart -->
+<div class="group flex flex-col items-center gap-6">
+<div class="w-32 h-32 rounded-full glass-card bg-surface-variant/40 border border-tertiary/20 flex items-center justify-center relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(141,164,255,0.3)] group-hover:border-tertiary">
+<span class="material-symbols-outlined text-4xl text-tertiary">target</span>
+</div>
+<div class="text-center">
+<h3 class="font-headline text-xl font-bold text-on-surface">Dart</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Foundational UI</p>
+</div>
+</div>
+<!-- Skill: Flutter -->
+<div class="group flex flex-col items-center gap-6">
+<div class="w-32 h-32 rounded-full glass-card bg-surface-variant/40 border border-primary/20 flex items-center justify-center relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(94,212,253,0.3)] group-hover:border-primary">
+<span class="material-symbols-outlined text-4xl text-primary">phone_iphone</span>
+</div>
+<div class="text-center">
+<h3 class="font-headline text-xl font-bold text-on-surface">Flutter</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">App Architecture</p>
+</div>
+</div>
+<!-- Skill: OpenCV -->
+<div class="group flex flex-col items-center gap-6">
+<div class="w-32 h-32 rounded-full glass-card bg-surface-variant/40 border border-secondary/20 flex items-center justify-center relative transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(254,157,169,0.3)] group-hover:border-secondary">
+<span class="material-symbols-outlined text-4xl text-secondary">visibility</span>
+</div>
+<div class="text-center">
+<h3 class="font-headline text-xl font-bold text-on-surface">OpenCV</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Computer Vision</p>
+</div>
+</div>
+</section>
+<!-- Focus Areas / Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
+<div class="md:col-span-8 glass-card bg-surface-container-high/50 p-10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -mr-32 -mt-32 transition-all group-hover:bg-primary/20"></div>
+<h4 class="text-primary font-headline tracking-widest uppercase text-xs mb-8">Focus 01</h4>
+<h3 class="text-3xl font-headline font-bold mb-6">Algorithm Design &amp; DSA</h3>
+<p class="text-on-surface-variant mb-8 max-w-xl">Deep exploration of computational efficiency. From recursive patterns to complex graph architectures, optimizing the very core of logic flows.</p>
+<div class="flex gap-4">
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant/30 text-xs font-headline">O(log n) Logic</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container-highest border border-outline-variant/30 text-xs font-headline">Dynamic Programming</span>
+</div>
+</div>
+<div class="md:col-span-4 glass-card bg-secondary/10 border-l-4 border-secondary p-10 flex flex-col justify-between">
+<div>
+<h4 class="text-secondary font-headline tracking-widest uppercase text-xs mb-4">Focus 02</h4>
+<h3 class="text-2xl font-headline font-bold mb-4">Machine Learning Foundations</h3>
+</div>
+<div class="w-full h-32 bg-surface-container-low relative overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="abstract neural network visualization with digital nodes and connection lines in deep blue and pink glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxvqgsXZVmGEf7zP12vvETL0KTauhXEjoZLnR1C89hP0hQg5vZzRVk28uVP_MYcjuIfjRKvV4WSfB4WxFhT7a9iBLKH7Z8bCUmJ67650G4GDsEwAWTI-qHYpuEIlQ7-Uq0yAKJ40ZWMa0K9IEpI5MnCiWMPaY2OYpcqMT7FXCKJgbCVip75pVFMAS9nxYzS5g8iSavDzEvav2_0Q9RI5DlD56CCH7e5I1Y9lQrDT3vdI6HJKqxS5cEqlk5NebkAda42Ow_1_MShjA"/>
+</div>
+</div>
+<div class="md:col-span-5 glass-card bg-surface-container-high/50 p-10 border border-outline-variant/10">
+<span class="material-symbols-outlined text-tertiary mb-6 text-4xl">psychology_alt</span>
+<h3 class="text-2xl font-headline font-bold mb-4">Problem Solving</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Systematic breakdown of complex engineering challenges into scalable, modular solutions through a rogue experimenter's lens.</p>
+</div>
+<div class="md:col-span-7 glass-card bg-[#001f46] p-10 flex items-center gap-8 relative overflow-hidden">
+<div class="flex-1">
+<h3 class="text-2xl font-headline font-bold mb-2">The Tech Stack Evolution</h3>
+<p class="text-on-surface-variant text-sm">Constantly iterating on the toolset to push the boundaries of what AI and UI can achieve together.</p>
+</div>
+<div class="hidden sm:block">
+<div class="grid grid-cols-2 gap-2">
+<div class="w-12 h-12 bg-primary/20 rounded-sm"></div>
+<div class="w-12 h-12 bg-secondary/20 rounded-sm"></div>
+<div class="w-12 h-12 bg-tertiary/20 rounded-sm"></div>
+<div class="w-12 h-12 bg-outline-variant/20 rounded-sm"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full py-12 flex flex-col items-center gap-6 border-t border-white/5 relative z-10">
+<div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+<div class="flex gap-12 font-headline text-xs tracking-widest uppercase text-slate-600">
+<a class="hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">LinkedIn</a>
+<a class="hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">GitHub</a>
+<a class="hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">Instagram</a>
+</div>
+<p class="font-body text-xs tracking-widest uppercase text-slate-600">
+            © 2024 <span class="text-[#fe9da9]">Rattan Kumar</span> | Galactic Rogue Edition
+        </p>
+</footer>
+</body></html>

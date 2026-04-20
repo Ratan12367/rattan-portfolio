@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#61769d",
+                    "secondary-container": "#762f3b",
+                    "on-tertiary-fixed": "#001249",
+                    "tertiary-fixed": "#98adff",
+                    "on-secondary": "#621f2c",
+                    "inverse-on-surface": "#40557b",
+                    "surface": "#000e26",
+                    "error-dim": "#d7383b",
+                    "primary-container": "#28aed5",
+                    "secondary-fixed-dim": "#ffaeb7",
+                    "outline-variant": "#33486d",
+                    "surface-container-high": "#001f46",
+                    "on-primary": "#004659",
+                    "surface-dim": "#000e26",
+                    "tertiary-fixed-dim": "#859eff",
+                    "on-surface": "#dbe5ff",
+                    "surface-container-highest": "#002551",
+                    "primary": "#5ed4fd",
+                    "error": "#ff716c",
+                    "on-tertiary-container": "#001655",
+                    "surface-container-lowest": "#000000",
+                    "on-primary-container": "#002732",
+                    "on-primary-fixed": "#00313e",
+                    "primary-fixed": "#5ed4fd",
+                    "background": "#000e26",
+                    "secondary": "#fe9da9",
+                    "error-container": "#9f0519",
+                    "primary-fixed-dim": "#4dc6ee",
+                    "on-surface-variant": "#96acd6",
+                    "secondary-fixed": "#ffc2c8",
+                    "on-tertiary": "#002172",
+                    "primary-dim": "#4dc6ee",
+                    "surface-container": "#00193b",
+                    "secondary-dim": "#ef909c",
+                    "inverse-primary": "#006882",
+                    "surface-tint": "#5ed4fd",
+                    "surface-bright": "#002b5d",
+                    "surface-variant": "#002551",
+                    "on-tertiary-fixed-variant": "#022e94",
+                    "on-error": "#490006",
+                    "on-secondary-container": "#ffc0c6",
+                    "surface-container-low": "#00132f",
+                    "on-background": "#dbe5ff",
+                    "inverse-surface": "#f9f9ff",
+                    "on-secondary-fixed-variant": "#833945",
+                    "tertiary": "#8da4ff",
+                    "on-error-container": "#ffa8a3",
+                    "tertiary-dim": "#7d98ff",
+                    "on-primary-fixed-variant": "#005065",
+                    "tertiary-container": "#7a95fd",
+                    "on-secondary-fixed": "#5f1d29"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .bg-grid-pattern {
+        background-image: linear-gradient(to right, rgba(51, 72, 109, 0.1) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(51, 72, 109, 0.1) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      .glass-card {
+        background: rgba(0, 37, 81, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(51, 72, 109, 0.15);
+      }
+      .glow-sm:hover {
+        box-shadow: 0 0 15px rgba(94, 212, 253, 0.3);
+      }
+      .text-glow-primary {
+        text-shadow: 0 0 8px rgba(94, 212, 253, 0.5);
+      }
+      .text-glow-secondary {
+        text-shadow: 0 0 8px rgba(254, 157, 169, 0.5);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#000e26]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<nav class="flex justify-between items-center px-6 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#19A7CE]" data-icon="menu">menu</span>
+<span class="text-2xl font-bold tracking-tighter text-[#19A7CE] drop-shadow-[0_0_8px_rgba(25,167,206,0.5)] font-headline uppercase">Rattan | AI</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tighter uppercase text-sm">
+<a class="text-[#fe9da9] font-bold transition-all duration-300 hover:bg-white/5 px-3 py-1 rounded" href="#">Home</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300 hover:bg-white/5 px-3 py-1 rounded" href="#">About</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300 hover:bg-white/5 px-3 py-1 rounded" href="#">Skills</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300 hover:bg-white/5 px-3 py-1 rounded" href="#">Projects</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300 hover:bg-white/5 px-3 py-1 rounded" href="#">Roadmap</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-all duration-300 hover:bg-white/5 p-2 rounded-full">
+<span class="material-symbols-outlined text-[#19A7CE]" data-icon="rocket_launch">rocket_launch</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="relative pt-24 min-h-screen overflow-hidden">
+<!-- Background Grid Texture -->
+<div class="absolute inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[150px] rounded-full pointer-events-none"></div>
+<!-- Hero Section: The Cockpit -->
+<section class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Content -->
+<div class="lg:col-span-7 flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/20 text-secondary text-xs font-headline tracking-widest uppercase mb-4">
+<span class="material-symbols-outlined text-[14px]" data-icon="terminal" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span>Status: Galactic Rogue</span>
+</div>
+<h1 class="font-headline text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] text-on-surface">
+                    Rattan Kumar <br/>
+<span class="text-primary text-glow-primary">Engineering Logic &amp; AI</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-xl mt-4 leading-relaxed">
+                    From <span class="text-secondary font-bold">Experiment 626</span> to Future Software Engineer. Designing high-precision systems with a touch of organic chaos.
+                </p>
+<div class="flex flex-wrap gap-4 mt-8">
+<button class="bg-primary text-on-primary px-8 py-4 font-headline font-bold uppercase tracking-widest active:scale-95 transition-all glow-sm flex items-center gap-2">
+<span>Initialize Protocol</span>
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+<button class="glass-card text-on-surface px-8 py-4 font-headline font-bold uppercase tracking-widest active:scale-95 transition-all border border-primary/30 hover:border-primary flex items-center gap-2">
+<span>View Records</span>
+<span class="material-symbols-outlined" data-icon="database">database</span>
+</button>
+</div>
+</div>
+<!-- Hero Image (Asymmetric Frame) -->
+<div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+<div class="relative w-full max-w-[380px] aspect-[4/5]">
+<!-- Decorative HUD elements -->
+<div class="absolute -top-4 -right-4 w-16 h-16 border-t-2 border-r-2 border-primary/40 z-20"></div>
+<div class="absolute -bottom-4 -left-4 w-16 h-16 border-b-2 border-l-2 border-secondary/40 z-20"></div>
+<div class="w-full h-full glass-card overflow-hidden rotate-2 hover:rotate-0 transition-transform duration-700 p-1.5 shadow-[0_0_30px_rgba(94,212,253,0.15)]">
+<img alt="Rattan Kumar" class="w-full h-full object-cover" data-alt="Portrait of Rattan Kumar, a young software engineer in a checkered shirt, styled within a high-tech experimental interface." src="https://lh3.googleusercontent.com/aida/ADBb0uifXXo-rve-XUifQ-vmSel4uwP0OpQEszb63EgzVYg8zijJak1nehWczT2qnYM0P5sAt3lZ8Pfo0XLnd8VMcrcLux6RyJvqgFxcglHY_MyX1kv7dL21rc9Q5_5BiY0vjg4JEPRTNvWf6PBrlpJ3FTmos7GGXeJaNvYUwOMWD1t_v85b7eM45RbUBxLLnlplU7REq9j7c32rPI8721fwPHylmmB7nDJxPb2sv0IDPEosL0ivOF0dHT08ZNqSzhv3dh24kh3TpwiT5Q"/>
+</div>
+<!-- Floating Data Chip -->
+<div class="absolute -bottom-6 -right-2 glass-card p-3 rounded-xl border border-white/10 shadow-2xl animate-bounce-slow z-30">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="memory">memory</span>
+</div>
+<div>
+<p class="text-[8px] text-on-surface-variant font-headline uppercase tracking-tighter">Current Build</p>
+<p class="text-xs font-bold text-on-surface">V2.0-ROGUE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Command Center Bento Grid -->
+<section class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-20 py-24">
+<h2 class="font-headline text-3xl font-bold tracking-tighter text-on-surface mb-12 flex items-center gap-4">
+<span class="w-12 h-[2px] bg-primary"></span>
+                CORE MODULES
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Bento Item: Skills -->
+<div class="md:col-span-2 lg:col-span-3 glass-card p-8 group hover:bg-surface-container-highest/60 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" data-icon="psychology">psychology</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Neural Engineering</h3>
+<p class="text-on-surface-variant mb-6 font-body">Mastering the intersection of AI and scalable architecture. Building brains for the machines of tomorrow.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-headline">PyTorch</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-headline">TensorFlow</span>
+<span class="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-headline">React.js</span>
+</div>
+</div>
+<!-- Bento Item: Project Preview -->
+<div class="md:col-span-2 lg:col-span-3 glass-card relative overflow-hidden group">
+<img alt="Project Background" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-110 transition-transform duration-700" data-alt="Abstract visualization of neural networks and blockchain nodes connected by glowing cyan lines in deep space void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3uh8vrlya-98gNE-vH2s7QqrsIigQ-9eiJGG3zakoGeEuJAH_9c2wFja_JHxdNO-qSfQvhUwqvze5tcMfMpTNzoGdWMNzmW1pEFABDp6mbDoJjQNXbd1jdeT6EyMPwXw3CCm6WBl-vG5TzQFK8lkKZ52kdjPWaGgL-ufZ_LvyZffSMoIzGbzTUTOFbAeKE80tTEnKtNPtXI58eKoVFdZVHLEqT4qukYF3CHwpeiBbKujqtXmegKVpswq3lPDafUEtwFc-O95awJY"/>
+<div class="relative p-8 h-full flex flex-col justify-end bg-gradient-to-t from-surface to-transparent">
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-2">Project: Void_Walker</h3>
+<p class="text-on-surface-variant font-body">An autonomous agent navigating decentralized data structures.</p>
+<a class="mt-4 text-secondary font-headline font-bold text-sm uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            Access Files <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Bento Item: Small Stats -->
+<div class="md:col-span-1 lg:col-span-2 glass-card p-6 flex flex-col items-center justify-center text-center">
+<span class="text-5xl font-headline font-black text-[#fe9da9] text-glow-secondary">626</span>
+<p class="text-xs font-headline text-slate-500 uppercase tracking-widest mt-2">Experiments Logged</p>
+</div>
+<!-- Bento Item: Medium Stat -->
+<div class="md:col-span-1 lg:col-span-2 glass-card p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary/60" data-icon="insights">insights</span>
+<span class="text-[10px] text-primary/40 font-headline uppercase">Live Metrics</span>
+</div>
+<div>
+<p class="text-3xl font-headline font-bold text-on-surface">99.8%</p>
+<p class="text-xs font-body text-on-surface-variant">Logic Consistency</p>
+</div>
+</div>
+<!-- Bento Item: Contact CTA -->
+<div class="md:col-span-2 lg:col-span-2 bg-primary p-8 flex flex-col justify-between group cursor-pointer active:scale-[0.98] transition-transform">
+<h3 class="font-headline text-2xl font-bold text-on-primary">Establish Link?</h3>
+<div class="flex justify-between items-end">
+<p class="text-sm font-body text-on-primary/80">Transmission ready for your inquiry.</p>
+<span class="material-symbols-outlined text-4xl text-on-primary group-hover:translate-x-2 transition-transform" data-icon="send">send</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Strip -->
+<section class="relative z-10 border-y border-white/5 py-12 bg-surface-container-low/30 overflow-hidden">
+<div class="flex gap-12 items-center whitespace-nowrap overflow-hidden opacity-30 select-none">
+<span class="font-headline text-4xl lg:text-6xl font-black text-outline-variant italic">EXPERIMENT 626</span>
+<span class="material-symbols-outlined text-primary" data-icon="star">star</span>
+<span class="font-headline text-4xl lg:text-6xl font-black text-outline-variant italic">FUTURE SOFTWARE ENGINEER</span>
+<span class="material-symbols-outlined text-secondary" data-icon="hub">hub</span>
+<span class="font-headline text-4xl lg:text-6xl font-black text-outline-variant italic">AI ARCHITECT</span>
+<span class="material-symbols-outlined text-primary" data-icon="star">star</span>
+<span class="font-headline text-4xl lg:text-6xl font-black text-outline-variant italic">GALACTIC ROGUE</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative z-10 border-t border-white/5 py-12 px-6 lg:px-20">
+<div class="max-w-[1440px] mx-auto flex flex-col items-center gap-10">
+<!-- Grid decorative background for footer -->
+<div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-center justify-between w-full gap-8 relative z-10">
+<p class="font-body text-xs tracking-widest uppercase text-slate-600">
+                    © 2024 Rattan Kumar | Galactic Rogue Edition
+                </p>
+<div class="flex items-center gap-8">
+<a class="font-headline text-xs tracking-widest uppercase text-slate-600 hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">LinkedIn</a>
+<a class="font-headline text-xs tracking-widest uppercase text-slate-600 hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">GitHub</a>
+<a class="font-headline text-xs tracking-widest uppercase text-slate-600 hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">Instagram</a>
+</div>
+<button class="active:scale-95 transition-all p-4 bg-surface-container-highest rounded-full border border-white/5 hover:border-primary/40 group">
+<span class="material-symbols-outlined text-primary group-hover:-translate-y-1 transition-transform" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Side Navigation Shell (Hidden by default, triggered by menu) -->
+<aside class="hidden fixed right-0 top-0 h-screen w-80 z-[60] p-8 bg-[#000e26] border-l border-white/5 shadow-[20px_0_50px_rgba(0,0,0,0.5)] font-headline text-lg">
+<div class="flex flex-col h-full">
+<div class="flex justify-between items-center mb-12">
+<span class="text-[#fe9da9] font-black italic">EXPERIMENT 626</span>
+<span class="material-symbols-outlined text-on-surface cursor-pointer" data-icon="close">close</span>
+</div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-4 p-4 bg-[#19A7CE]/10 text-[#19A7CE] border-r-4 border-[#19A7CE] hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>About</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>Skills</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span>Projects</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span>Roadmap</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+<span>Contact</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-white/5 opacity-40 italic text-xs">
+                Connection established... Rogue Node Active.
+            </div>
+</div>
+</aside>
+</body></html>

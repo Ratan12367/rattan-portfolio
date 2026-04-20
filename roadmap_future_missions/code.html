@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Roadmap | Future Missions</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#61769d",
+                    "secondary-container": "#762f3b",
+                    "on-tertiary-fixed": "#001249",
+                    "tertiary-fixed": "#98adff",
+                    "on-secondary": "#621f2c",
+                    "inverse-on-surface": "#40557b",
+                    "surface": "#000e26",
+                    "error-dim": "#d7383b",
+                    "primary-container": "#28aed5",
+                    "secondary-fixed-dim": "#ffaeb7",
+                    "outline-variant": "#33486d",
+                    "surface-container-high": "#001f46",
+                    "on-primary": "#004659",
+                    "surface-dim": "#000e26",
+                    "tertiary-fixed-dim": "#859eff",
+                    "on-surface": "#dbe5ff",
+                    "surface-container-highest": "#002551",
+                    "primary": "#5ed4fd",
+                    "error": "#ff716c",
+                    "on-tertiary-container": "#001655",
+                    "surface-container-lowest": "#000000",
+                    "on-primary-container": "#002732",
+                    "on-primary-fixed": "#00313e",
+                    "primary-fixed": "#5ed4fd",
+                    "background": "#000e26",
+                    "secondary": "#fe9da9",
+                    "error-container": "#9f0519",
+                    "primary-fixed-dim": "#4dc6ee",
+                    "on-surface-variant": "#96acd6",
+                    "secondary-fixed": "#ffc2c8",
+                    "on-tertiary": "#002172",
+                    "primary-dim": "#4dc6ee",
+                    "surface-container": "#00193b",
+                    "secondary-dim": "#ef909c",
+                    "inverse-primary": "#006882",
+                    "surface-tint": "#5ed4fd",
+                    "surface-bright": "#002b5d",
+                    "surface-variant": "#002551",
+                    "on-tertiary-fixed-variant": "#022e94",
+                    "on-error": "#490006",
+                    "on-secondary-container": "#ffc0c6",
+                    "surface-container-low": "#00132f",
+                    "on-background": "#dbe5ff",
+                    "inverse-surface": "#f9f9ff",
+                    "on-secondary-fixed-variant": "#833945",
+                    "tertiary": "#8da4ff",
+                    "on-error-container": "#ffa8a3",
+                    "tertiary-dim": "#7d98ff",
+                    "on-primary-fixed-variant": "#005065",
+                    "tertiary-container": "#7a95fd",
+                    "on-secondary-fixed": "#5f1d29"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(circle, rgba(97, 118, 157, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glow-sm:hover {
+            box-shadow: 0 0 15px rgba(94, 212, 253, 0.3);
+        }
+        .timeline-path {
+            background: linear-gradient(to bottom, transparent, #5ed4fd, #fe9da9, #8da4ff, transparent);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#000e26]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#19A7CE] transition-all duration-300 hover:bg-white/5 p-2 rounded active:scale-95">menu</button>
+<h1 class="text-2xl font-bold tracking-tighter text-[#19A7CE] drop-shadow-[0_0_8px_rgba(25,167,206,0.5)] font-['Space_Grotesk'] uppercase">Rattan | AI</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tighter uppercase text-sm">
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300" href="#">Home</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300" href="#">Skills</a>
+<a class="text-[#fe9da9] font-bold transition-all duration-300" href="#">Roadmap</a>
+<a class="text-slate-400 hover:text-[#19A7CE] transition-all duration-300" href="#">Projects</a>
+</nav>
+<button class="material-symbols-outlined text-[#19A7CE] transition-all duration-300 hover:bg-white/5 p-2 rounded active:scale-95">rocket_launch</button>
+</div>
+</header>
+<!-- NavigationDrawer (Platform Anchor) -->
+<aside class="fixed right-0 top-0 h-screen w-80 z-[60] p-8 bg-[#000e26] border-l border-white/5 shadow-[20px_0_50px_rgba(0,0,0,0.5)] hidden md:block translate-x-full lg:translate-x-0 transition-transform duration-500">
+<div class="flex flex-col h-full">
+<div class="mb-12">
+<h2 class="text-[#fe9da9] font-black italic text-2xl tracking-tighter">EXPERIMENT 626</h2>
+<div class="h-1 w-12 bg-primary mt-2"></div>
+</div>
+<nav class="flex flex-col gap-2 font-['Space_Grotesk'] text-lg">
+<a class="flex items-center gap-4 p-3 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">home</span> Home
+                </a>
+<a class="flex items-center gap-4 p-3 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">person</span> About
+                </a>
+<a class="flex items-center gap-4 p-3 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span> Skills
+                </a>
+<a class="flex items-center gap-4 p-3 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">terminal</span> Projects
+                </a>
+<a class="flex items-center gap-4 p-3 bg-[#19A7CE]/10 text-[#19A7CE] border-r-4 border-[#19A7CE] hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">map</span> Roadmap
+                </a>
+<a class="flex items-center gap-4 p-3 text-slate-500 hover:text-white hover:translate-x-2 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">send</span> Contact
+                </a>
+</nav>
+<div class="mt-auto pt-8 border-t border-white/5">
+<div class="bg-surface-container-high p-4 rounded-xl backdrop-blur-md">
+<p class="text-xs font-headline uppercase tracking-widest text-outline mb-2">System Status</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-primary font-bold text-sm">CALIBRATING MISSIONS</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="pt-32 pb-24 px-6 md:pr-86 max-w-[1440px] mx-auto min-h-screen relative overflow-hidden">
+<!-- Background Decor -->
+<div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+<div class="absolute top-1/4 -right-20 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full"></div>
+<!-- Section Header -->
+<div class="relative z-10 mb-20 lg:mb-32">
+<h2 class="text-7xl md:text-9xl font-headline font-bold text-on-surface/5 absolute -top-12 -left-4 select-none uppercase tracking-tighter">FUTURE</h2>
+<div class="flex flex-col md:flex-row md:items-end gap-6 relative">
+<div class="flex-1">
+<span class="text-primary font-headline tracking-[0.4em] uppercase text-sm mb-4 block">Strategic Initiative</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-6">MISSION <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">ROADMAP</span></h1>
+</div>
+<div class="max-w-xs mb-2">
+<p class="text-on-surface-variant text-sm font-body leading-relaxed">
+                        A tactical progression through the core domains of advanced engineering and artificial intelligence. This path defines the trajectory of the Rogue Experiment.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Timeline Canvas -->
+<div class="relative max-w-4xl mx-auto py-20">
+<!-- Continuous Path Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 timeline-path opacity-30 hidden md:block"></div>
+<!-- Phase 1 -->
+<div class="relative flex flex-col md:flex-row items-center gap-8 mb-40">
+<div class="flex-1 md:text-right order-2 md:order-1">
+<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-none border-l-4 border-primary shadow-[0_0_50px_rgba(0,0,0,0.3)] transition-all hover:translate-y-[-4px]">
+<span class="text-primary font-headline text-xs tracking-widest uppercase mb-2 block">Phase 01</span>
+<h3 class="text-2xl font-headline font-bold mb-4 text-on-surface">Mastering System Design</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
+                            Architecting high-availability, distributed infrastructures. Focus on microservices, event-driven patterns, and massive scale optimization.
+                        </p>
+<div class="flex flex-wrap gap-2 md:justify-end">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-tighter">Scalability</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-tighter">Cloud-Native</span>
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-tighter">Kubernetes</span>
+</div>
+</div>
+</div>
+<div class="relative z-20 order-1 md:order-2">
+<div class="w-16 h-16 bg-surface border-4 border-primary rounded-none rotate-45 flex items-center justify-center shadow-[0_0_20px_rgba(94,212,253,0.4)]">
+<span class="material-symbols-outlined text-primary -rotate-45" style="font-variation-settings: 'FILL' 1;">layers</span>
+</div>
+</div>
+<div class="flex-1 hidden md:block order-3"></div>
+</div>
+<!-- Phase 2 -->
+<div class="relative flex flex-col md:flex-row items-center gap-8 mb-40">
+<div class="flex-1 hidden md:block order-1"></div>
+<div class="relative z-20 order-1 md:order-2">
+<div class="w-16 h-16 bg-surface border-4 border-secondary rounded-none rotate-45 flex items-center justify-center shadow-[0_0_20px_rgba(254,157,169,0.4)]">
+<span class="material-symbols-outlined text-secondary -rotate-45" style="font-variation-settings: 'FILL' 1;">code_blocks</span>
+</div>
+</div>
+<div class="flex-1 order-2 md:order-3">
+<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-none border-l-4 border-secondary shadow-[0_0_50px_rgba(0,0,0,0.3)] transition-all hover:translate-y-[-4px]">
+<span class="text-secondary font-headline text-xs tracking-widest uppercase mb-2 block">Phase 02</span>
+<h3 class="text-2xl font-headline font-bold mb-4 text-on-surface">Cracking DSA</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
+                            Optimizing computational efficiency through advanced data structures and algorithmic precision. Solving the unsolvable with elegant logic.
+                        </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tighter">DP &amp; Graphs</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tighter">Big O Mastery</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-[10px] font-bold uppercase tracking-tighter">LeetCode Elite</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="relative flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1 md:text-right order-2 md:order-1">
+<div class="bg-surface-container-high/40 backdrop-blur-xl p-8 rounded-none border-l-4 border-tertiary shadow-[0_0_50px_rgba(0,0,0,0.3)] transition-all hover:translate-y-[-4px]">
+<span class="text-tertiary font-headline text-xs tracking-widest uppercase mb-2 block">Phase 03</span>
+<h3 class="text-2xl font-headline font-bold mb-4 text-on-surface">AI-Driven Development</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed mb-6">
+                            Integrating large language models and neural architectures into the development lifecycle. Engineering the future of autonomous software.
+                        </p>
+<div class="flex flex-wrap gap-2 md:justify-end">
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-[10px] font-bold uppercase tracking-tighter">LLM Ops</span>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-[10px] font-bold uppercase tracking-tighter">PyTorch</span>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full text-[10px] font-bold uppercase tracking-tighter">Neural Nets</span>
+</div>
+</div>
+</div>
+<div class="relative z-20 order-1 md:order-2">
+<div class="w-16 h-16 bg-surface border-4 border-tertiary rounded-none rotate-45 flex items-center justify-center shadow-[0_0_20px_rgba(141,164,255,0.4)]">
+<span class="material-symbols-outlined text-tertiary -rotate-45" style="font-variation-settings: 'FILL' 1;">neurology</span>
+</div>
+</div>
+<div class="flex-1 hidden md:block order-3"></div>
+</div>
+</div>
+<!-- Decorative Progress Card -->
+<div class="mt-32 max-w-4xl mx-auto">
+<div class="bg-surface-container-low p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'wght' 100;">monitoring</span>
+</div>
+<h4 class="text-4xl font-headline font-bold mb-8 tracking-tighter">MISSION PROGRESS</h4>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface-variant">System Design Stability</span>
+<span class="font-headline text-xs text-primary">85%</span>
+</div>
+<div class="h-[2px] bg-outline-variant w-full">
+<div class="h-full bg-primary w-[85%] shadow-[0_0_10px_#5ed4fd]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface-variant">DSA Core Integrity</span>
+<span class="font-headline text-xs text-secondary">62%</span>
+</div>
+<div class="h-[2px] bg-outline-variant w-full">
+<div class="h-full bg-secondary w-[62%] shadow-[0_0_10px_#fe9da9]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface-variant">AI Symbiosis Level</span>
+<span class="font-headline text-xs text-tertiary">40%</span>
+</div>
+<div class="h-[2px] bg-outline-variant w-full">
+<div class="h-full bg-tertiary w-[40%] shadow-[0_0_10px_#8da4ff]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col items-center gap-6 w-full border-t border-white/5 py-12 bg-transparent relative z-10">
+<div class="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
+<div class="flex gap-12 font-['Manrope'] text-xs tracking-widest uppercase">
+<a class="text-slate-600 hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">LinkedIn</a>
+<a class="text-slate-600 hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">GitHub</a>
+<a class="text-slate-600 hover:text-[#fe9da9] hover:tracking-[0.2em] transition-all cursor-pointer" href="#">Instagram</a>
+</div>
+<p class="text-slate-600 font-['Manrope'] text-[10px] tracking-widest uppercase">
+            © 2024 Rattan Kumar | Galactic Rogue Edition
+        </p>
+</footer>
+</body></html>

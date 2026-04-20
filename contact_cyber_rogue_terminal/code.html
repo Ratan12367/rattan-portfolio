@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | Comms Terminal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(94, 212, 253, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(94, 212, 253, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); text-shadow: -2px 0 #fe9da9, 2px 0 #5ed4fd; }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); text-shadow: 2px 0 #fe9da9, -2px 0 #5ed4fd; }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); text-shadow: -2px 0 #fe9da9, 2px 0 #5ed4fd; }
+            100% { transform: translate(0); }
+        }
+        .glitch-text:hover {
+            animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(0deg, rgba(94, 212, 253, 0) 0%, rgba(94, 212, 253, 0.1) 50%, rgba(94, 212, 253, 0) 100%);
+            position: absolute;
+            animation: scanline 8s linear infinite;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        }
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #5ed4fd;
+            pointer-events: none;
+            animation: float-particle 10s linear infinite;
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(94, 212, 253, 0.3); box-shadow: 0 0 5px rgba(94, 212, 253, 0.2); }
+            50% { border-color: rgba(254, 157, 169, 0.8); box-shadow: 0 0 20px rgba(254, 157, 169, 0.4); }
+        }
+        .neon-pulse {
+            animation: pulse-border 3s infinite;
+        }
+
+        .terminal-scroll::-webkit-scrollbar { width: 2px; }
+        .terminal-scroll::-webkit-scrollbar-thumb { background: #5ed4fd; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#61769d",
+                      "secondary-container": "#762f3b",
+                      "on-tertiary-fixed": "#001249",
+                      "tertiary-fixed": "#98adff",
+                      "on-secondary": "#621f2c",
+                      "inverse-on-surface": "#40557b",
+                      "surface": "#000e26",
+                      "error-dim": "#d7383b",
+                      "primary-container": "#28aed5",
+                      "secondary-fixed-dim": "#ffaeb7",
+                      "outline-variant": "#33486d",
+                      "surface-container-high": "#001f46",
+                      "on-primary": "#004659",
+                      "surface-dim": "#000e26",
+                      "tertiary-fixed-dim": "#859eff",
+                      "on-surface": "#dbe5ff",
+                      "surface-container-highest": "#002551",
+                      "primary": "#5ed4fd",
+                      "error": "#ff716c",
+                      "on-tertiary-container": "#001655",
+                      "surface-container-lowest": "#000000",
+                      "on-primary-container": "#002732",
+                      "on-primary-fixed": "#00313e",
+                      "primary-fixed": "#5ed4fd",
+                      "background": "#000e26",
+                      "secondary": "#fe9da9",
+                      "error-container": "#9f0519",
+                      "primary-fixed-dim": "#4dc6ee",
+                      "on-surface-variant": "#96acd6",
+                      "secondary-fixed": "#ffc2c8",
+                      "on-tertiary": "#002172",
+                      "primary-dim": "#4dc6ee",
+                      "surface-container": "#00193b",
+                      "secondary-dim": "#ef909c",
+                      "inverse-primary": "#006882",
+                      "surface-tint": "#5ed4fd",
+                      "surface-bright": "#002b5d",
+                      "surface-variant": "#002551",
+                      "on-tertiary-fixed-variant": "#022e94",
+                      "on-error": "#490006",
+                      "on-secondary-container": "#ffc0c6",
+                      "surface-container-low": "#00132f",
+                      "on-background": "#dbe5ff",
+                      "inverse-surface": "#f9f9ff",
+                      "on-secondary-fixed-variant": "#833945",
+                      "tertiary": "#8da4ff",
+                      "on-error-container": "#ffa8a3",
+                      "tertiary-dim": "#7d98ff",
+                      "on-primary-fixed-variant": "#005065",
+                      "tertiary-container": "#7a95fd",
+                      "on-secondary-fixed": "#5f1d29"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Manrope"],
+                      "label": ["Space Grotesk"]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 overflow-x-hidden" data-mode="connect">
+<!-- Particles Generator (Background Effect) -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+<div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+<div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+<div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+<div class="particle" style="left: 90%; animation-delay: 6s;"></div>
+</div>
+<div class="scanline"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#000e26]/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_0_15px_rgba(94,212,253,0.1)]">
+<div class="flex justify-between items-center px-6 py-4 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary transition-all duration-300 hover:bg-white/5 active:scale-95 cursor-pointer">menu</span>
+<h1 class="font-['Space_Grotesk'] tracking-tighter uppercase text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(94,212,253,0.5)] glitch-text">Rattan | AI</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-slate-400 hover:text-primary transition-all duration-300 hover:scale-110" href="#">Home</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-slate-400 hover:text-primary transition-all duration-300 hover:scale-110" href="#">About</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-slate-400 hover:text-primary transition-all duration-300 hover:scale-110" href="#">Skills</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-slate-400 hover:text-primary transition-all duration-300 hover:scale-110" href="#">Projects</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-slate-400 hover:text-primary transition-all duration-300 hover:scale-110" href="#">Roadmap</a>
+<a class="font-['Space_Grotesk'] tracking-tighter uppercase text-secondary font-bold transition-all duration-300 drop-shadow-[0_0_8px_rgba(254,157,169,0.5)]" href="#">Contact</a>
+</nav>
+<span class="material-symbols-outlined text-primary animate-pulse transition-all duration-300 hover:bg-white/5 active:scale-95 cursor-pointer">rocket_launch</span>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="relative min-h-screen pt-32 pb-24 overflow-hidden">
+<!-- Background Textures -->
+<div class="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none"></div>
+<div class="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-[5%] right-[0%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Hero Section / Contact Details -->
+<div class="lg:col-span-5 space-y-12">
+<div class="space-y-4">
+<h2 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-none glitch-text cursor-default">
+                            COMMS <br/>
+<span class="text-primary drop-shadow-[0_0_20px_rgba(94,212,253,0.5)]">TERMINAL</span>
+</h2>
+<div class="h-1 w-24 bg-secondary shadow-[0_0_10px_rgba(254,157,169,0.5)]"></div>
+</div>
+<div class="space-y-8">
+<div class="group cursor-pointer">
+<p class="font-headline text-xs tracking-widest uppercase text-outline mb-2 flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full animate-ping"></span>
+                                Primary Uplink
+                            </p>
+<a class="text-2xl md:text-3xl font-headline font-bold text-on-surface hover:text-primary transition-colors duration-300 break-all drop-shadow-[0_0_2px_rgba(255,255,255,0.1)]" href="mailto:ratanjha0001@gmail.com">
+                                ratanjha0001@gmail.com
+                            </a>
+</div>
+<!-- System Status Log -->
+<div class="p-6 bg-surface-container-high/50 backdrop-blur-xl border-l-4 border-secondary neon-pulse">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-mono text-secondary uppercase tracking-widest">Live_Status</span>
+<div class="flex-grow border-t border-secondary/20 border-dashed"></div>
+</div>
+<p class="text-on-surface-variant font-mono text-sm leading-relaxed terminal-scroll">
+<span class="text-primary">[OK]</span> Initializing secure connection...<br/>
+<span class="text-primary">[OK]</span> Routing data via <span class="text-secondary">ratanjha0001@gmail.com</span><br/>
+<span class="text-primary">[OK]</span> Status: <span class="animate-pulse">Awaiting input...</span>
+</p>
+</div>
+<!-- Enhanced Social Artifacts Section -->
+<div class="space-y-6">
+<p class="font-headline text-xs tracking-widest uppercase text-outline">Social Artifacts</p>
+<div class="grid grid-cols-1 gap-3">
+<a class="flex items-center gap-4 p-3 bg-surface-container-highest border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all duration-300 group" href="#">
+<div class="w-10 h-10 flex items-center justify-center border border-outline-variant group-hover:border-primary group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">share</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-tighter text-outline group-hover:text-primary">LinkedIn</span>
+<span class="text-sm font-mono text-on-surface">/in/ratan-jha-35b365364</span>
+</div>
+</a>
+<a class="flex items-center gap-4 p-3 bg-surface-container-highest border border-outline-variant hover:border-secondary hover:bg-secondary/5 transition-all duration-300 group" href="#">
+<div class="w-10 h-10 flex items-center justify-center border border-outline-variant group-hover:border-secondary group-hover:text-secondary">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-tighter text-outline group-hover:text-secondary">GitHub</span>
+<span class="text-sm font-mono text-on-surface">@Ratan12367</span>
+</div>
+</a>
+<a class="flex items-center gap-4 p-3 bg-surface-container-highest border border-outline-variant hover:border-tertiary hover:bg-tertiary/5 transition-all duration-300 group" href="#">
+<div class="w-10 h-10 flex items-center justify-center border border-outline-variant group-hover:border-tertiary group-hover:text-tertiary">
+<span class="material-symbols-outlined text-xl">photo_camera</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-tighter text-outline group-hover:text-tertiary">Instagram</span>
+<span class="text-sm font-mono text-on-surface">@ratanjha001</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Form / High-Tech Console -->
+<div class="lg:col-span-7">
+<div class="relative group">
+<!-- Decorative Frame Elements -->
+<div class="absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-primary animate-pulse shadow-[0_0_10px_rgba(94,212,253,0.5)]"></div>
+<div class="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-secondary animate-pulse shadow-[0_0_10px_rgba(254,157,169,0.5)]"></div>
+<div class="bg-surface-container-low/40 backdrop-blur-2xl border border-outline-variant/30 p-8 md:p-12 relative overflow-hidden neon-pulse">
+<div class="flex justify-between items-center mb-10 border-b border-outline-variant/20 pb-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-ping"></div>
+<span class="font-headline text-xs tracking-[0.2em] uppercase text-on-surface-variant glitch-text cursor-default">System.Initiate_Message()</span>
+</div>
+<span class="text-[10px] font-mono text-primary bg-primary/10 px-2 py-1">ENCRYPTED_LINK_0626</span>
+</div>
+<form class="space-y-10 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2 relative group/field">
+<label class="font-headline text-[10px] tracking-widest uppercase text-outline group-focus-within/field:text-primary transition-colors flex justify-between">
+<span>Identity_Label</span>
+<span class="text-primary/20 font-mono">ID:01</span>
+</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body p-0 pb-2 placeholder:text-outline/20 transition-all uppercase tracking-widest text-sm" placeholder="ENTER NAME..." type="text"/>
+</div>
+<div class="space-y-2 relative group/field">
+<label class="font-headline text-[10px] tracking-widest uppercase text-outline group-focus-within/field:text-primary transition-colors flex justify-between">
+<span>Comms_Address</span>
+<span class="text-primary/20 font-mono">TCP:8080</span>
+</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body p-0 pb-2 placeholder:text-outline/20 transition-all uppercase tracking-widest text-sm" placeholder="EMAIL@DOMAIN.COM" type="email"/>
+</div>
+</div>
+<div class="space-y-2 relative group/field">
+<label class="font-headline text-[10px] tracking-widest uppercase text-outline group-focus-within/field:text-primary transition-colors flex justify-between">
+<span>Data_Payload</span>
+<span class="text-primary/20 font-mono">SIZE:2KB</span>
+</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary text-on-surface font-body p-0 pb-2 placeholder:text-outline/20 transition-all resize-none uppercase tracking-widest text-sm" placeholder="TRANSMIT MESSAGE HERE..." rows="4"></textarea>
+</div>
+<div class="pt-6 relative">
+<button class="relative overflow-hidden w-full px-12 py-5 bg-primary text-on-primary font-headline font-bold uppercase tracking-[0.3em] text-sm hover:brightness-110 active:scale-[0.98] transition-all group flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(94,212,253,0.3)]">
+<span class="relative z-10">EXECUTE_SEND_REQUEST</span>
+<span class="material-symbols-outlined text-lg relative z-10 group-hover:translate-x-1 transition-transform">send</span>
+<div class="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
+<div class="absolute inset-0 bg-secondary/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+</form>
+<div class="mt-12 flex items-end justify-between border-t border-outline-variant/20 pt-6">
+<div class="space-y-1">
+<div class="w-40 h-1 bg-outline-variant/30 overflow-hidden relative">
+<div class="absolute h-full bg-primary/60 animate-[scanline_2s_linear_infinite]" style="width: 20px;"></div>
+<div class="w-2/3 h-full bg-primary/40"></div>
+</div>
+<p class="text-[8px] font-mono text-outline uppercase tracking-widest">Buffer_Load: 68% - STABLE</p>
+</div>
+<div class="text-right">
+<p class="text-[8px] font-mono text-outline uppercase tracking-tighter">Loc: Galactic Sector 7G // 00:42:01.32</p>
+<p class="text-[8px] font-mono text-secondary uppercase tracking-tighter italic animate-pulse">Auth: Experiment 626 Authorized</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- NavigationDrawer -->
+<aside class="fixed right-0 top-0 h-screen w-80 z-[60] p-8 bg-[#000e26] border-l border-primary/20 shadow-[0_0_50px_rgba(0,0,0,0.5)] transform translate-x-full md:translate-x-0 transition-transform duration-500">
+<div class="flex flex-col h-full">
+<div class="mb-12 border-b border-primary/10 pb-4">
+<h3 class="font-['Space_Grotesk'] text-lg text-secondary font-black italic tracking-widest uppercase glitch-text">EXPERIMENT 626</h3>
+<span class="text-[8px] font-mono text-outline uppercase">Subsystem_Active</span>
+</div>
+<nav class="flex-grow space-y-2">
+<div class="group flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:bg-white/5 hover:translate-x-2 transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined group-hover:text-primary">home</span>
+<span class="font-['Space_Grotesk'] text-lg group-hover:tracking-widest transition-all">Home</span>
+</div>
+<div class="group flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:bg-white/5 hover:translate-x-2 transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined group-hover:text-primary">person</span>
+<span class="font-['Space_Grotesk'] text-lg group-hover:tracking-widest transition-all">About</span>
+</div>
+<div class="group flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:bg-white/5 hover:translate-x-2 transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined group-hover:text-primary">psychology</span>
+<span class="font-['Space_Grotesk'] text-lg group-hover:tracking-widest transition-all">Skills</span>
+</div>
+<div class="group flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:bg-white/5 hover:translate-x-2 transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined group-hover:text-primary">terminal</span>
+<span class="font-['Space_Grotesk'] text-lg group-hover:tracking-widest transition-all">Projects</span>
+</div>
+<div class="group flex items-center gap-4 p-4 text-slate-500 hover:text-white hover:bg-white/5 hover:translate-x-2 transition-all duration-200 cursor-pointer border-l-2 border-transparent hover:border-primary">
+<span class="material-symbols-outlined group-hover:text-primary">map</span>
+<span class="font-['Space_Grotesk'] text-lg group-hover:tracking-widest transition-all">Roadmap</span>
+</div>
+<div class="group flex items-center gap-4 p-4 bg-primary/10 text-primary border-l-4 border-primary transition-all duration-200 cursor-pointer shadow-[inset_0_0_20px_rgba(94,212,253,0.1)]">
+<span class="material-symbols-outlined animate-bounce">send</span>
+<span class="font-['Space_Grotesk'] text-lg tracking-widest">Contact</span>
+</div>
+</nav>
+<div class="mt-auto pt-8 border-t border-white/5">
+<div class="h-32 w-full bg-surface-container-highest overflow-hidden relative border border-primary/20">
+<img class="w-full h-full object-cover mix-blend-overlay opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="abstract tech visualization with cyan circuitry lines and deep blue glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClZ8jsYuURMDVfiXMk6q7ODAkiq8919uBqE8x_VdIkhKFVCotZbB9cNxaNDYgXdR3vdms_ExPMiM1DRpz3X98cZ34oyiUmkin1M0lKj8DqQdtWTbUyVM8tcTdaqb6PgQvUZrgddipXG5pSdCgVRITbzkBWfTL3K07gL-fAHyyrMDXmwWr5WZgctnZjrSlG9_7JxlNFbgnxfSQY3m6DwsVkGxHIxW3TryhpONk4SbcbB1KsH2IR1To7b_7Gq6gxohZGqagCgIKvMC4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#000e26] to-transparent"></div>
+<div class="absolute top-2 left-2 text-[6px] font-mono text-primary/40 uppercase">Video_Feed_626</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="w-full py-12 flex flex-col items-center gap-6 border-t border-primary/10 relative overflow-hidden">
+<div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+<div class="flex gap-10 z-10">
+<a class="font-['Manrope'] text-xs tracking-[0.3em] uppercase text-slate-600 hover:text-secondary hover:scale-110 transition-all cursor-pointer relative group" href="#">
+                LinkedIn
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary group-hover:w-full transition-all duration-300"></span>
+</a>
+<a class="font-['Manrope'] text-xs tracking-[0.3em] uppercase text-slate-600 hover:text-secondary hover:scale-110 transition-all cursor-pointer relative group" href="#">
+                GitHub
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary group-hover:w-full transition-all duration-300"></span>
+</a>
+<a class="font-['Manrope'] text-xs tracking-[0.3em] uppercase text-slate-600 hover:text-secondary hover:scale-110 transition-all cursor-pointer relative group" href="#">
+                Instagram
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary group-hover:w-full transition-all duration-300"></span>
+</a>
+</div>
+<div class="text-center z-10 space-y-1">
+<p class="font-['Manrope'] text-[10px] tracking-widest uppercase text-secondary/70 italic">
+                © 2026 Rattan Kumar | Galactic Rogue Edition
+            </p>
+<p class="text-[8px] font-mono text-outline uppercase tracking-tighter opacity-50">System: Alpha-v4.2.0 // Node: Mars-Orbital-3</p>
+</div>
+</footer>
+</body></html>
